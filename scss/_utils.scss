@@ -1,0 +1,75 @@
+:root {
+    --font-h1: 50px;
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+
+    /* 브라우저 사이즈 768px이상, 1023px이하 일때,*/
+    // :root {
+    //     --font-h1: 44px;
+    // }
+
+}
+
+@media (max-width: 767px) {
+
+    /* 브라우저 사이즈 768px이상, 1023px이하 일때,*/
+    // :root {
+    //     --font-h1: 26px;
+    // }
+
+}
+
+/*반응형 화면 크기*/
+$mobile: 767px;
+$tablet: 1023px;
+$desktop: 1360px;
+
+
+
+/*반응형, 브라우저 크기가 768이상, 1023px 이하일때*/
+// @mixin posCenter {
+//     position: absolute;
+//     top: 50%;
+//     left: 50%;
+//     transform: translate(-50%, -50%);
+// }
+
+// @mixin ell01 {
+//     white-space: nowrap;
+//     text-overflow: ellipsis;
+//     overflow: hidden;
+// }
+
+/*반응형, 브라우저 크기가 767px 이하일때*/
+@mixin mobile {
+    @media (max-width: $mobile) {
+        @content;
+    }
+}
+
+/*반응형, 브라우저 크기가 768이상, 1023px 이하일때*/
+@mixin tablet {
+    @media (max-width: $tablet) {
+        @content;
+    }
+}
+
+/*반응형, 브라우저 크기가 1024px 이상일때*/
+@mixin desktop {
+    @media (min-width: $desktop) {
+        @content;
+    }
+}
+
+@mixin noScroll {
+    -ms-overflow-style: none;
+    /* IE and Edge */
+    scrollbar-width: none;
+
+    /* Firefox */
+    &::-webkit-scrollbar {
+        display: none;
+        /* Chrome, Safari, Opera*/
+    }
+}
